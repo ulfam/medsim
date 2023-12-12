@@ -1,0 +1,56 @@
+/* Общие стили для страницы */
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #e0cdf7; !* Цвет фона *!*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/prescription.jpeg'); /* Путь к изображению */
+    background-size: cover; /* Масштабирование изображения */
+    background-repeat: no-repeat; /* Повторение фона выключено */
+}
+
+/* Стили для заголовка */
+h1 {
+    color: #fafafa; /* Цвет текста */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Стили для формы */
+form {
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрирование формы по горизонтали */
+    background-color: #fff; /* Цвет фона формы */
+    padding: 20px;
+    border-radius: 5px; /* Закругление углов формы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень формы */
+}
+
+label {
+    display: block; /* Размещение метки на новой строке */
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Измененный цвет при наведении */
+}
