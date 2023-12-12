@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apteka</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Hi! Here you can find analogues of your med</h1>
+
+    <form method="post" action="/search">
+        <label for="medicine">Type a name of a med:</label>
+        <input type="text" id="medicine" name="medicine" required>
+        <button type="submit">Find similar meds</button>
+    </form>
+
+</body>
+</html>
