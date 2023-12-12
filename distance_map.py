@@ -8,10 +8,6 @@ from pymystem3 import Mystem
 from nltk.corpus import stopwords
 import nltk
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-
-from sklearn.neighbors import NearestNeighbors
-
 nltk.download("stopwords")
 
 def rus_lemmatize(text, max_lenght=30000):

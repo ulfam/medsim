@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import joblib
 import faiss
 import string
