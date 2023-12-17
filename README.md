@@ -8,9 +8,11 @@ python ui.py
 ```
 
 Then you will be given the address of the localhost (something like http://127.0.0.1:8096/) where the start page will be launched:
+![Описание](https://github.com/ulfam/medsim/blob/main/homepage.png)
 
 
-In the search field you need to enter the name of the medicine in Russian or English and within some time, you will be redirected to the page with the answer.
+In the search field you need to enter the name of the medicine in Russian or English and within some time, you will be redirected to the page with results:
+![Описание](https://github.com/ulfam/medsim/blob/main/resultpage.png)
 
 ## Idea
 
