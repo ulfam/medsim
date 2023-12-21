@@ -32,4 +32,5 @@ The similarity search for medicines is based on:
 - Index with vectors for english titles **flat_eng.index**
 - UI flask app - **ui.py**
 - Script for k nearest neighbors search, based on index - **knn.py**
-- Script for text vectorization and index initialization and fill **vectorization.py**
+- Script for text vectorization **distance_map.py**
+- Script for index initialization and filling **vectorization.py**
