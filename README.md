@@ -26,6 +26,10 @@ The similarity search for medicines is based on:
 - filling the faiss flat index to find nearest neighbors
 
 ## Main files:
-- The initial cleaned datasets are:
--   clean_vseapteki_items.csv (for russian titles)
--   clean_vseapteki_items.csv (for english titles)
+- The initial cleaned dataset for russian titles **clean_vseapteki_items.csv**
+- The initial cleaned dataset for english titles **theindependentpharmacy_items.csv**
+- Index with vectors for russian titles **flat_rus.index**
+- Index with vectors for english titles **flat_eng.index**
+- UI flask app - **ui.py**
+- Script for k nearest neighbors search, based on index - **knn.py**
+- Script for text vectorization and index initialization and fill **vectorization.py**
