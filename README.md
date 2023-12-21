@@ -24,3 +24,8 @@ This repository implements an application to search for most similar medicines f
 The similarity search for medicines is based on:
 - vectorization of text descriptions using tf-idf
 - filling the faiss flat index to find nearest neighbors
+
+## Main files:
+- The initial cleaned datasets are:
+-   clean_vseapteki_items.csv (for russian titles)
+-   clean_vseapteki_items.csv (for english titles)
