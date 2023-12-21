@@ -28,8 +28,8 @@ def eng_lemmatize(text):
 
 
 print('start read data...')
-df = pd.read_csv('clean_vseapteki_items.csv')
-# df = pd.read_csv('theindependentpharmacy_items.csv')
+df = pd.read_csv('datasets/clean_vseapteki_items.csv')
+# df = pd.read_csv('datasets/theindependentpharmacy_items.csv')
 print('finish read data')
 df['Name_short'] = [re.split(r'[,\s]+', i.lower())[0] for i in df['name']]
 df['Name_other'] = [re.split(r'[,\s]+', i.lower())[1:] for i in df['name']]
@@ -39,10 +39,10 @@ for i in tqdm(df['description'].values, desc="Progress", unit="texts"):
     new_col.append(rus_lemmatize(i))
 df['processed'] = new_col
 print('finish process text')
-df.to_csv('vseapteki_processed_df.csv', index=False)
-# df.to_csv('theindependentpharmacy_processed_df.csv', index=False)
-df[["link","name","Name_short"]].to_csv('vseapteki_names_links.csv', index=False)
-# df[["link","name","Name_short"]].to_csv('theindependentpharmacy_names_links.csv', index=False)
+df.to_csv('datasets/vseapteki_processed_df.csv', index=False)
+# df.to_csv('datasets/theindependentpharmacy_processed_df.csv', index=False)
+df[["link","name","Name_short"]].to_csv('datasets/vseapteki_names_links.csv', index=False)
+# df[["link","name","Name_short"]].to_csv('datasets/theindependentpharmacy_names_links.csv', index=False)
 print('processed dataframe is saved!')
 
 

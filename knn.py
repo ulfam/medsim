@@ -7,13 +7,13 @@ import string
 def search_similar_medicines(medicine_name, k=10):
     print('start read data...')
     if medicine_name.lower()[0] in string.ascii_lowercase:
-        vectors = joblib.load('theindependentpharmacy_bert.joblib')
-        new_df = pd.read_csv('theindependentpharmacy_names_links.csv')
-        index = faiss.read_index("flat_eng_bert.index")
+        vectors = joblib.load('vectors/theindependentpharmacy_bert.joblib')
+        new_df = pd.read_csv('datasets/theindependentpharmacy_names_links.csv')
+        index = faiss.read_index("faiss_indexes/flat_eng_bert.index")
     else:
-        vectors = joblib.load('vseapteki_bert.joblib')
-        new_df = pd.read_csv('vseapteki_names_links.csv')
-        index = faiss.read_index("flat_rus_bert.index")
+        vectors = joblib.load('vectors/vseapteki_bert.joblib')
+        new_df = pd.read_csv('datasets/vseapteki_names_links.csv')
+        index = faiss.read_index("faiss_indexes/flat_rus_bert.index")
     print(f'Count of vectors in index: {index.ntotal}')
     medicine_name_processed = "".join(medicine_name.lower().split(" "))
     print(f'Name of medicine is: {medicine_name_processed}')
