@@ -22,15 +22,18 @@ This repository implements an application to search for most similar medicines f
 
 ## Under the hood
 The similarity search for medicines is based on:
-- vectorization of text descriptions using tf-idf
+- vectorization of text descriptions using pretrained rubert-tity for russian texts and distilbert for english texts
 - filling the faiss flat index to find nearest neighbors
 
 ## Main files:
-- The initial cleaned dataset for russian titles **clean_vseapteki_items.csv**
-- The initial cleaned dataset for english titles **theindependentpharmacy_items.csv**
-- Index with vectors for russian titles **flat_rus.index**
-- Index with vectors for english titles **flat_eng.index**
+- The initial cleaned dataset for russian titles **datasets/clean_vseapteki_items.csv**
+- The initial cleaned dataset for english titles **datasets/theindependentpharmacy_items.csv**
+- Index with bert vectors for russian titles **faiss_indexes/flat_rus_bert.index**
+- Index with bert vectors for english titles **faiss_indexes/flat_eng_bert.index**
+- Bert vectors for russian titles **vectors/vseapteki_bert.joblib**
+- Bert vectors for english titles **vectors/theindependentpharmacy_bert.joblib**
 - UI flask app - **ui.py**
 - Script for k nearest neighbors search, based on index - **knn.py**
 - Script for text vectorization **distance_map.py**
-- Script for index initialization and filling **vectorization.py**
+- Script for bert vectors index initialization and filling **vectorization_bert.py**
+- Script for tf-idf vectors index initialization and filling **vectorization.py**
