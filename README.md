@@ -1,7 +1,9 @@
 # MedSim
 MedSim is a project for similarity search among medications based on their text descriptions. Search of analogues of medicines could be done for Russian and English titles.
 
-## How to use
+**For testing purposes the app was launched on https://c993-86-18-238-24.ngrok-free.app - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below**
+
+## How to use locally
 In this repository you can find all the necessary code and data to run a flask web application on your local host. Just run the ui.py script from your console:
 ```sh
 python ui.py
@@ -16,9 +18,19 @@ In the search field you need to enter the name of the medicine in Russian or Eng
 
 ## Idea
 
-In machine learning, the problem of finding similar entities is often addressed: finding similar pictures and products in recommendations, finding the most similar faces, and so on. For these problems, a wide range of algorithms are used to find nearest neighbors. Their choice depends on the specifics of the task, the amount of data, and performance constraints. This paper describes a solution to the problem of finding similar drugs by constructing text embeddings based on the drug description and further searching for nearest neighbors using faiss algorithm. Finding drug analogs is quite a practical task. But it is usually approached from the point of view of analyzing the composition and active ingredients. In the described project MedSim was proposed to search based on various textual information about the drug - composition, description, prescription and side effects. This idea comes from the assumption that for a person who is facing some disease of moderate or mild severity when buying a medicine, the first and foremost important thing is the effect and result, even if it is achieved with different active ingredients. In order to realize such an alternative search for analogues, a dataset of drugs from the Russian and British segment of drug sales was collected in the course of the project. Also, a simple web interface was developed for the project, which provides analogs of medicines for English and Russian names.
+This repository implements an application to search for most similar medicines for the entered Russian or English title. In recommendation systems this task is usually called similarity search. In this project, the analysis of drug descriptions from publicly available online-pharmacies is used to solve this task. Unlike traditional sites, where drug analogs are listed based on the main active ingredient, in this project similarity is determined based on the similarity of the text description of medicines (which includes composition, purpose, route of administration and side effects).
 
 ## Under the hood
 The similarity search for medicines is based on:
 - vectorization of text descriptions using tf-idf
 - filling the faiss flat index to find nearest neighbors
+
+## Main files:
+- The initial cleaned dataset for russian titles **clean_vseapteki_items.csv**
+- The initial cleaned dataset for english titles **theindependentpharmacy_items.csv**
+- Index with vectors for russian titles **flat_rus.index**
+- Index with vectors for english titles **flat_eng.index**
+- UI flask app - **ui.py**
+- Script for k nearest neighbors search, based on index - **knn.py**
+- Script for text vectorization **distance_map.py**
+- Script for index initialization and filling **vectorization.py**
