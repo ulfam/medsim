@@ -1,7 +1,7 @@
 # MedSim
 MedSim is a project for similarity search among medications based on their text descriptions. Search of analogues of medicines could be done for Russian and English titles.
 
-**For testing purposes the app was launched on https://c993-86-18-238-24.ngrok-free.app - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below**
+**For testing purposes the app was launched on https://e029-86-18-238-24.ngrok-free.app/ - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below**
 
 ## How to use locally
 In this repository you can find all the necessary code and data to run a flask web application on your local host. Just run the ui.py script from your console:
@@ -10,11 +10,11 @@ python ui.py
 ```
 
 Then you will be given the address of the localhost (something like http://127.0.0.1:8096/) where the start page will be launched:
-![Описание](https://github.com/ulfam/medsim/blob/main/homepage.png)
+![Описание](https://github.com/ulfam/medsim/blob/main/screenshots/homepage.png)
 
 
 In the search field you need to enter the name of the medicine in Russian or English and within some time, you will be redirected to the page with results:
-![Описание](https://github.com/ulfam/medsim/blob/main/resultpage.png)
+![Описание](https://github.com/ulfam/medsim/blob/main/screenshots/resultpage.png)
 
 ## Idea
 
