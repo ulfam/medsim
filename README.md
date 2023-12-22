@@ -6,8 +6,8 @@ MedSim is a project for similarity search among medications based on their text 
 **This project is created solely for educational and research purposes and is intended for personal use. The author of the project is not a medical professional and does not possess medical qualifications. The project provides functionality for finding nearest neighbors for medications based on their text descriptions in online pharmacies. However, it is important to note that the search results may have limited accuracy and do not substitute for consultation with a qualified medical professional. Users of the project are required to use the provided information with caution and assume full responsibility for decisions related to their health. The author is not responsible for any potential errors or deficiencies in the information provided. By using this project, you agree to the terms and limitations outlined in this disclaimer. In case of any doubts, it is recommended to seek the advice of a medical professional for professional medical opinions.**
 
 
-
-**For testing purposes the app was launched on https://e029-86-18-238-24.ngrok-free.app/ - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below**
+## Demo
+For testing purposes the app was launched on https://e029-86-18-238-24.ngrok-free.app/ - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below
 
 ## How to use locally
 In this repository you can find all the necessary code and data to run a flask web application on your local host. Just run the ui.py script from your console:
@@ -23,7 +23,6 @@ In the search field you need to enter the name of the medicine in Russian or Eng
 ![Описание](https://github.com/ulfam/medsim/blob/main/screenshots/resultpage.png)
 
 ## Idea
-
 This repository implements an application to search for most similar medicines for the entered Russian or English title. In recommendation systems this task is usually called similarity search. In this project, the analysis of drug descriptions from publicly available online-pharmacies is used to solve this task. Unlike traditional sites, where drug analogs are listed based on the main active ingredient, in this project similarity is determined based on the similarity of the text description of medicines (which includes composition, purpose, route of administration and side effects).
 
 ## Under the hood
