@@ -1,6 +1,12 @@
 # MedSim
 MedSim is a project for similarity search among medications based on their text descriptions. Search of analogues of medicines could be done for Russian and English titles.
 
+**Disclaimer: Important Information Regarding the Use of the Project**
+
+**This project is created solely for educational and research purposes and is intended for personal use. The author of the project is not a medical professional and does not possess medical qualifications. The project provides functionality for finding nearest neighbors for medications based on their text descriptions in online pharmacies. However, it is important to note that the search results may have limited accuracy and do not substitute for consultation with a qualified medical professional. Users of the project are required to use the provided information with caution and assume full responsibility for decisions related to their health. The author is not responsible for any potential errors or deficiencies in the information provided. By using this project, you agree to the terms and limitations outlined in this disclaimer. In case of any doubts, it is recommended to seek the advice of a medical professional for professional medical opinions.**
+
+
+
 **For testing purposes the app was launched on https://e029-86-18-238-24.ngrok-free.app/ - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below**
 
 ## How to use locally
