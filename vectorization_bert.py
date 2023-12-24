@@ -7,19 +7,12 @@ from transformers import AutoTokenizer, AutoModel, DistilBertTokenizer, DistilBe
 from tqdm import tqdm
 tqdm.pandas()
 
-def rubert_vect(text, model, tokenizer):
-    t = tokenizer(text, padding=True, truncation=True, return_tensors='pt')
-    with torch.no_grad():
-        model_output = model(**{k: v.to(model.device) for k, v in t.items()})
-    embeddings = model_output.last_hidden_state[:, 0, :]
-    embeddings = torch.nn.functional.normalize(embeddings)
-    return embeddings[0].cpu().numpy()
 
-def distilbert_vect(text, model, tokenizer):
-    tokens = tokenizer(text, return_tensors='pt', truncation=True, max_length=512)
+def bert_vect(text, model, tokenizer):
+    tokens = tokenizer(text, truncation=True, return_tensors='pt', max_length=512)
     with torch.no_grad():
-        output = model(**tokens)
-    sentence_vector = output.last_hidden_state.mean(dim=1).squeeze().numpy()
+        model_output = model(**tokens)
+    sentence_vector = model_output.last_hidden_state.mean(dim=1).squeeze().numpy()
     return sentence_vector
 
 # prepare vectors for russian texts
@@ -30,7 +23,7 @@ X = new_df['processed']
 print('start vectorizing with pretrained rubert tiny...')
 tokenizer = AutoTokenizer.from_pretrained("cointegrated/rubert-tiny2")
 model = AutoModel.from_pretrained("cointegrated/rubert-tiny2")
-new_df['vector'] = new_df['description'].progress_apply(lambda l: rubert_vect(l, model, tokenizer))
+new_df['vector'] = new_df['description'].progress_apply(lambda l: bert_vect(l, model, tokenizer))
 vectors = np.vstack(new_df['vector'].values)
 print('finish vectorizing')
 joblib.dump(vectors, 'vectors/vseapteki_bert.joblib')
@@ -49,7 +42,7 @@ X = new_df['processed']
 print('start vectorizing with pretrained distilbert...')
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 model = DistilBertModel.from_pretrained('distilbert-base-uncased')
-new_df['vector'] = new_df['description'].progress_apply(lambda l: distilbert_vect(l, model, tokenizer))
+new_df['vector'] = new_df['description'].progress_apply(lambda l: bert_vect(l, model, tokenizer))
 vectors = np.vstack(new_df['vector'].values)
 print('finish vectorizing')
 joblib.dump(vectors, 'vectors/theindependentpharmacy_bert.joblib')

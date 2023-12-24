@@ -20,6 +20,7 @@ def search_similar_medicines(medicine_name, k=10):
     i = list(new_df['Name_short'].values).index(medicine_name_processed)
     print(f'Index of target value is: {i}')
     D, I = index.search(vectors[[i]], k*2)
-    ans_prev = new_df.loc[I[0][1:]][['name', 'link', 'Name_short']]
+    ans_prev = new_df.loc[I[0]][['name', 'link', 'Name_short']]
+    print(f'Similar medicines\n:{ans_prev}')
     ans = ans_prev[ans_prev['Name_short']!=medicine_name_processed][['name', 'link']].values[:k]
     return ans
