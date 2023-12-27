@@ -9,6 +9,8 @@ MedSim is a project for similarity search among medications based on their text 
 ## Demo
 For testing purposes the app was launched on https://e029-86-18-238-24.ngrok-free.app/ - so you can try it (after pressing "Visit site" button, you will be redirected to the MedSim homepage). If you have problem with this link, please launch the app on your local host using information below
 
+Also, you can try to use https://t.me/medsimbot (@medsim) in Telegram. Just type /start and after that the name of your medicine
+
 ## How to use locally
 In this repository you can find all the necessary code and data to run a flask web application on your local host. Just run the ui.py script from your console:
 ```sh
