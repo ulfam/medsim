@@ -12,8 +12,11 @@ def index():
 @app.route('/search', methods=['POST'])
 def search():
     medicine_name = request.form.get('medicine')
-    similar_medicines = search_similar_medicines(medicine_name)
-    return render_template('results.html', medicines=similar_medicines)
+    try:
+        similar_medicines = search_similar_medicines(medicine_name)
+        return render_template('results.html', medicines=similar_medicines)
+    except:
+        return render_template('results_error.html')
 
 
 
