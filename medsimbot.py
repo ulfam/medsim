@@ -4,12 +4,9 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, ConversationHandler, filters, MessageHandler
 from knn import search_similar_medicines_short
 
-from telegram import InlineQueryResultArticle, InputTextMessageContent
-from telegram.ext import InlineQueryHandler
 
-# Замените 'TOKEN' на токен вашего бота
+# use your own 'TOKEN' here
 TOKEN = os.getenv("TELEGRAM_API_KEY")
-
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -30,11 +27,6 @@ async def findsim(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text_caps = search_similar_medicines_short(medicine_name)
     except:
         text_caps = "Unfortunately, I don't have this medicine in my database. Or maybe there is a mistake in the name :)\n\nК сожалению, я не могу выполнить запрос. Это случается, если введенного названия нет в моей базе данных, или в случае ошибки в написании названия"
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
-
-
-async def caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text_caps = ' '.join(context.args).upper()
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
 
 
